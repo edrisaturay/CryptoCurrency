@@ -43,7 +43,4 @@ contract DappToken {
         // Return bool true if successful
         return true;
     }
-
-    // Delegated Transfers
-    
 }

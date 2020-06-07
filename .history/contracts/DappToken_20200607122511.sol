@@ -44,6 +44,5 @@ contract DappToken {
         return true;
     }
 
-    // Delegated Transfers
-    
+    // 
 }
