@@ -74,13 +74,21 @@ contract DappToken {
     // Transfer From
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         // Require that the from acocunt has enough token
-        require(_value <= balanceOf(_from), "You do not have enough token in your account");
+        require(_value <= balanceOf[_from], "You do not have enough token in your account");
+        
         // Require that the allowance is big enough
         require(_value <= allowance[_from][msg.sender], "You're not authorized to transfer this amount");
+        
         // Change the balance
+        balanceOf[_from] -= _value;
+        balanceOf[_to] += _value;
+
         // Update the allowance
+        allowance[_from][msg.sender] -= _value;
+
         // Trigger transfer event
-        // emit Transfer(msg.sender, _to, _value);
+        emit Transfer(_from, _to, _value);
+
         // return a boolean
         return true;
     }

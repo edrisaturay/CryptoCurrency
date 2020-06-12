@@ -92,6 +92,25 @@ contract("DappToken", (accounts) => {
             return tokenInstance.transferFrom(fromAccount, toAccount, 20, { from: spendingAccount })
         }).then(assert.fail).catch((error) => {
             assert(error.message.indexOf("revert") >= 0, "Cannot transfer value larger than approved amount")
+            return tokenInstance.transferFrom.call(fromAccount, toAccount, 10, { from: spendingAccount })
+        }).then((success) => {
+            assert.equal(success, true)
+            return tokenInstance.transferFrom(fromAccount, toAccount, 10, { from: spendingAccount })
+        }).then((receipt) => {
+            assert.equal(receipt.logs.length, 1, "Triggers one event")
+            assert.equal(receipt.logs[0].event, "Transfer", "Should be the 'Transfer' Event")
+            assert.equal(receipt.logs[0].args._from, fromAccount, "Logs the account the tokens are transfered from")
+            assert.equal(receipt.logs[0].args._to, toAccount, "Logs the account the tokens are transfered to")
+            assert.equal(receipt.logs[0].args._value, 10, "Logs the transfer amount")
+            return tokenInstance.balanceOf(fromAccount)
+        }).then((balance) => {
+            assert.equal(balance.toNumber(), 90, "Deducts the amount from the spending account")
+            return tokenInstance.balanceOf(toAccount)
+        }).then((balance) => {
+            assert.equal(balance.toNumber(), 10, "Added the amount to the receiving account")
+            return tokenInstance.allowance(fromAccount, spendingAccount);
+        }).then((allowance) => {
+            assert.equal(allowance.toNumber(), 0, "Deducts the amount from the allowance")
         })
     })
 })
