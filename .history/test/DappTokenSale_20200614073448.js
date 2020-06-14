@@ -4,10 +4,10 @@ let DappToken = artifacts.require("./DappToken.sol")
 contract("DappTokenSale", (accounts) => {
     let tokenSaleInstance
     let tokenInstance
-    let tokenPrice = 1000000000000000 // in wei
+    let tokenPrice = 1000000000000000; // in wei
     let admin = accounts[0]
     let buyer = accounts[1]
-    let tokenAvailable = 250000
+    let tokenAvailable = 
     let numberOfTokens;
     it("initialized the contract with the correct values", () => {
         return DappTokenSale.deployed().then((instance) => {
@@ -32,9 +32,7 @@ contract("DappTokenSale", (accounts) => {
         }).then((instance) => {
             // Then grab the token sale instance
             tokenSaleInstance = instance
-            // Provision 25% of total supply to this token sale stage
-            return tokenInstance.transfer(tokenSaleInstance.address, tokenAvailable, { from: admin })
-        }).then((receipt) => {
+
             numberOfTokens = 10
             return tokenSaleInstance.buyTokens(numberOfTokens,  { from: buyer, value: numberOfTokens * tokenPrice })
         }).then((receipt) => {

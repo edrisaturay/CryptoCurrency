@@ -29,7 +29,6 @@ contract DappTokenSale{
         // Require that value is equal to tokens
         require(msg.value == multiply(_numberOfTokens, tokenPrice), "");
         // Require that the sale has enough tokens
-        
         // Require that transfer is successful
 
         // Keep track of tokensSold

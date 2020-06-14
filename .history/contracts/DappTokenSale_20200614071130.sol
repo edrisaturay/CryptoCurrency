@@ -9,8 +9,8 @@ contract DappTokenSale{
     uint256 public tokenSold;
 
     event Sell(
-        address _buyer,
-        uint256 _amount
+        address _buyer, 
+        uint256
     );
 
     constructor(DappToken _tokenContract, uint256 _tokenPrice) public {
@@ -27,19 +27,10 @@ contract DappTokenSale{
     // Buy Tokens
     function buyTokens(uint256 _numberOfTokens) public payable {
         // Require that value is equal to tokens
-        require(msg.value == multiply(_numberOfTokens, tokenPrice), "");
         // Require that the sale has enough tokens
-        
         // Require that transfer is successful
-
         // Keep track of tokensSold
         tokenSold += _numberOfTokens;
-
         // Emit sell event
-        emit Sell(msg.sender, _numberOfTokens);
-    }
-
-    function multiply(uint256 _x, uint256 _y) internal pure returns (uint256 _z) {
-        require(_y == 0 || (_z = _x * _y) / _y == _x, "");
     }
 }

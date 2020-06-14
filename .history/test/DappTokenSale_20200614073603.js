@@ -33,8 +33,7 @@ contract("DappTokenSale", (accounts) => {
             // Then grab the token sale instance
             tokenSaleInstance = instance
             // Provision 25% of total supply to this token sale stage
-            return tokenInstance.transfer(tokenSaleInstance.address, tokenAvailable, { from: admin })
-        }).then((receipt) => {
+            return tokenInstance.transfer()
             numberOfTokens = 10
             return tokenSaleInstance.buyTokens(numberOfTokens,  { from: buyer, value: numberOfTokens * tokenPrice })
         }).then((receipt) => {

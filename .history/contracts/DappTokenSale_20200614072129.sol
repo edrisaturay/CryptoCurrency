@@ -29,7 +29,6 @@ contract DappTokenSale{
         // Require that value is equal to tokens
         require(msg.value == multiply(_numberOfTokens, tokenPrice), "");
         // Require that the sale has enough tokens
-        
         // Require that transfer is successful
 
         // Keep track of tokensSold
@@ -39,7 +38,7 @@ contract DappTokenSale{
         emit Sell(msg.sender, _numberOfTokens);
     }
 
-    function multiply(uint256 _x, uint256 _y) internal pure returns (uint256 _z) {
-        require(_y == 0 || (_z = _x * _y) / _y == _x, "");
+    function multiply(uint256 _x, uint256 _y) internal pure returns (uint256 z) {
+        require(y == 0 || )
     }
 }
