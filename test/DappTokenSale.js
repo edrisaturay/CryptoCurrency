@@ -45,10 +45,36 @@ contract("DappTokenSale", (accounts) => {
             return tokenSaleInstance.tokenSold()
         }).then((amount) => {
             assert.equal(amount.toNumber(), numberOfTokens, "increments the number of tokens sold")
+            return tokenInstance.balanceOf(buyer)
+        }).then((balance) => {
+            assert.equal(balance.toNumber(), numberOfTokens)
+            return tokenInstance.balanceOf(tokenSaleInstance.address)
+        }).then((balance) => {
+            assert.equal(balance.toNumber(), tokenAvailable - numberOfTokens)
             // Try to buy tokens different from the ether value
             return tokenSaleInstance.buyTokens(numberOfTokens, { from: buyer, value: 1 })
         }).then(assert.fail).catch((error) => {
             assert(error.message.indexOf("revert") >= 0, "msg.value must equal to number of tokens in wei")
+            return tokenSaleInstance.buyTokens(800000, { from: buyer, value: numberOfTokens * tokenPrice })
+        }).then(assert.fail).catch((error) => {
+            assert(error.message.indexOf("revert") >= 0, "cannot purchase more tokens than available")
+        })
+    })
+
+    it("ends token sale", () => {
+        return DappToken.deployed().then((instance) => {
+            tokenInstance = instance
+            return DappTokenSale.deployed()
+        }).then((instance) => {
+            tokenSaleInstance = instance
+            // Try to end sale from account other than the admin 
+            return tokenSaleInstance.endSale({ from: buyer })
+        }).then(assert.fail).catch((error) => {
+            assert(error.message.indexOf("revert") >= 0, "Must be the admin to end the sale")
+            // End token sale as admin 
+            return tokenSaleInstance.endSale({ from: admin })
+        }).then((receipt) => {
+            // Check receipt 
         })
     })
 })

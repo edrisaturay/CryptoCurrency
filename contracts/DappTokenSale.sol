@@ -28,9 +28,15 @@ contract DappTokenSale{
     function buyTokens(uint256 _numberOfTokens) public payable {
         // Require that value is equal to tokens
         require(msg.value == multiply(_numberOfTokens, tokenPrice), "");
-        // Require that the sale has enough tokens
+
+        // Require that admin is the address sending
+        // require(msg.sender == admin);
         
+        // Require that the sale has enough tokens
+        require(tokenContract.balanceOf(admin) >= _numberOfTokens);
+
         // Require that transfer is successful
+        require(tokenContract.transfer(msg.sender, _numberOfTokens));
 
         // Keep track of tokensSold
         tokenSold += _numberOfTokens;
@@ -39,6 +45,16 @@ contract DappTokenSale{
         emit Sell(msg.sender, _numberOfTokens);
     }
 
+    // Ending the token sale
+    function endSale() public {
+        // Require that only admin can end sale
+        require(msg.sender == admin);
+        
+        // Transfer the remaining tokens back to the admin
+        // Destroy the contract
+    }
+
+    // Multiply
     function multiply(uint256 _x, uint256 _y) internal pure returns (uint256 _z) {
         require(_y == 0 || (_z = _x * _y) / _y == _x, "");
     }
