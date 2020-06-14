@@ -3,7 +3,10 @@ let DappToken = artifacts.require("./DappToken.sol")
 contract("DappToken", (accounts) => {
     it("initialized the contract with the correct values", () => {
         return DappToken.deployed().then((instance) => {
-            tokenInstance = instance
+            tokenInstance = instance 
+            return tokenInstance.owner()
+        }).then((owner) => {
+            assert.equal(owner, accounts[0], "the admin is the first account")
             return tokenInstance.name()
         }).then((name) => {
             assert.equal(name, "DappToken", "Name is equal to DappToken")

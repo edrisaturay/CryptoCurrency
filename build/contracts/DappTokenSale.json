@@ -1,0 +1,184 @@
+{
+  "contractName": "DappTokenSale",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/edris/Library/BlockChain/CryptoCurrency/contracts/DappTokenSale.sol\":\"DappTokenSale\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/edris/Library/BlockChain/CryptoCurrency/contracts/DappTokenSale.sol\":{\"keccak256\":\"0x689b32aee1e4bf16fee48c2fd3b994ec9c5b0f14e71aa860fd5f03ecf8c4afd2\",\"urls\":[\"bzz-raw://2385856f133508e6ed0378bc0c11779689944a80bd1855ac6f2dad317232d6c2\",\"dweb:/ipfs/QmeWCscryz79nzs9NHC4hULaXcDWGQFFPHgTs4Ao7mdCQ7\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a7231582026d4c2030433706dcbf527ecba44794734aa870cdfb3e324465a2b0b5497b61164736f6c63430005100032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a7231582026d4c2030433706dcbf527ecba44794734aa870cdfb3e324465a2b0b5497b61164736f6c63430005100032",
+  "sourceMap": "27:177:1:-;;;58:133;8:9:-1;5:2;;;30:1;27;20:12;5:2;58:133:1;27:177;;;;;;",
+  "deployedSourceMap": "27:177:1:-;;;;;",
+  "source": "pragma solidity ^0.5.1;\r\n\r\ncontract DappTokenSale{\r\n\r\n    constructor () public {\r\n        // Assign an admin\r\n        // Assign Token Contract\r\n        // Assign Token Price\r\n        \r\n    }\r\n        \r\n}",
+  "sourcePath": "C:\\Users\\edris\\Library\\BlockChain\\CryptoCurrency\\contracts\\DappTokenSale.sol",
+  "ast": {
+    "absolutePath": "/C/Users/edris/Library/BlockChain/CryptoCurrency/contracts/DappTokenSale.sol",
+    "exportedSymbols": {
+      "DappTokenSale": [
+        212
+      ]
+    },
+    "id": 213,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 207,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".1"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 212,
+        "linearizedBaseContracts": [
+          212
+        ],
+        "name": "DappTokenSale",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 210,
+              "nodeType": "Block",
+              "src": "80:111:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 211,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 208,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "70:2:1"
+            },
+            "returnParameters": {
+              "id": 209,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "80:0:1"
+            },
+            "scope": 212,
+            "src": "58:133:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 213,
+        "src": "27:177:1"
+      }
+    ],
+    "src": "0:204:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/edris/Library/BlockChain/CryptoCurrency/contracts/DappTokenSale.sol",
+    "exportedSymbols": {
+      "DappTokenSale": [
+        212
+      ]
+    },
+    "id": 213,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 207,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".1"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 212,
+        "linearizedBaseContracts": [
+          212
+        ],
+        "name": "DappTokenSale",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 210,
+              "nodeType": "Block",
+              "src": "80:111:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 211,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 208,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "70:2:1"
+            },
+            "returnParameters": {
+              "id": 209,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "80:0:1"
+            },
+            "scope": 212,
+            "src": "58:133:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 213,
+        "src": "27:177:1"
+      }
+    ],
+    "src": "0:204:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x7C046DED20Bb0b4e89Cc937607bFbec51Fe90bf3",
+      "transactionHash": "0xd8e1d98c6de8ff644e8fec436a5d99d34c0fb2208fb840ce581c93ab792565b4"
+    }
+  },
+  "schemaVersion": "3.2.0",
+  "updatedAt": "2020-06-12T14:11:48.166Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

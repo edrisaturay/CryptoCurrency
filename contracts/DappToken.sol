@@ -7,6 +7,7 @@ contract DappToken {
     string public name = "DappToken"; // Symbol of the token
     string public symbol = "DTK"; // Name of the token
     string public standard = "DTK_v1.0"; // Standard of the token
+    address public owner; 
 
     uint public totalSupply;
 
@@ -22,6 +23,9 @@ contract DappToken {
         balanceOf[msg.sender] = _initialSupply;
 
         totalSupply = _initialSupply; // Total supply of the Token
+
+        // assign the token admin
+        owner = msg.sender;
 
     }
 

@@ -41,3 +41,6 @@ truffle init
 ### Truffle Command
 * Test: truffle test
 * Enter the Console: truffle console
+
+### Web3 Library for interacting with smart contract
+* web3.eth.getAccounts() -> getting all accounts
